@@ -44,6 +44,10 @@
       // Capa de tipo L.tileLayer definida con el complemento Leaflet-providers
       var topo = L.tileLayer.provider('OpenTopoMap');
       topo.addTo(mapa);      
+
+      var wmsLayer = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
+           layers: 'IGN_5:Limiteprovincial_5k'
+      }).addTo(map);
 	    
       // retorna un color con base en la cantidad de pobladores
       function color(d) {
