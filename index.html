@@ -45,6 +45,10 @@
       var topo = L.tileLayer.provider('OpenTopoMap');
       topo.addTo(mapa);      
 	    
+      var wmsLayer = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
+          layers: 'Límite Provincial 1:5mil'
+      }).addTo(map);
+	    
       // retorna un color con base en la cantidad de pobladores
       function color(d) {
 	      return d > 250000 ? '#67000d' :
